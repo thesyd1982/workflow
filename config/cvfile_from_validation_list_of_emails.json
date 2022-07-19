@@ -1,0 +1,40 @@
+[
+  {"workflow":{
+      "name": "-- Lecture d'un csv puis la validation des emails qui contient et ectriture du resultat dans un csv",
+      "tasks":[
+          {
+            "task": {
+              "name": "-- Lecture du fichier des emails",
+              "function":"read_csv_last_workflow_result",
+              "module": "main",
+              "data_input": "temp/data_emails_validation.csv",
+              "data_output": "emails",
+              "check_ready":""
+        }},
+        {"task": {
+              "name": "-- Validation des emails",
+              "function":"check_emails",
+              "module": "main",
+              "data_input": "",
+              "data_output": "emails",
+              "check_ready":""
+            }},
+        {"task": {
+              "name": "-- Ecriture du résultat de la validation dans un csv",
+              "function":"write_list_to_csv",
+              "module": "main",
+              "data_input": "",
+              "data_output": "temp/emails_validation2.csv",
+              "check_ready":""
+        }},
+        { "task": {
+              "name": "-- Lecture des données",
+              "function":"read_data",
+              "module": "main",
+              "data_input": "temp/emails_validation.csv",
+              "data_output": "",
+               "check_ready":""
+        }}
+        ]
+      }}
+    ]

@@ -1,0 +1,35 @@
+[   {
+      "workflow":{
+      "name": "-- Aquisition des linkedin depuis une liste sales navigator",
+      "tasks":[
+          {
+            "task": {
+              "name": "-- Récuperation des linkedin",
+              "function":"get_emails",
+              "check_ready":"check_url",
+              "module": "main",
+              "data_input": {"url" :"https://permisdebouger.com/contact"},
+              "data_output": ""
+            }},
+        {"task": {
+              "name": "-- Ecriture de la liste des linkedin sur un csv",
+              "function":"write_data",
+              "check_ready":"",
+              "module": "main",
+              "data_input": "",
+              "data_output": "temp/test.csv"
+            }},
+        { "task": {
+              "name": "-- Lecture des données",
+              "function":"read_data",
+              "check_ready":"",
+              "module": "main",
+              "data_input": "temp/test.csv",
+              "data_output": ""
+
+            }
+          }
+        ]
+      }
+    }
+]

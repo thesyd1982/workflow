@@ -1,0 +1,10 @@
+/api/
+/bots/
+/data_structure/
+/patterns/Handler.py
+/temp/
+tempo
+.env
+config/csvfile*
+config/linkedin*
+/venv/
